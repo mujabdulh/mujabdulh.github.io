@@ -3,12 +3,6 @@ Tulisan ini berisi langkah-langkah menggunakan vuepress untuk keperluan konten s
 
 Secara garis besar tutorial ini terdiri dari kebutuhan software apa saja supaya sistem dapat menjalankan vuepress, kemudian konfigurasi project vuepress, dilanjutkan terakhir pengisian konten project tersebut.
 
-
-
-[TOC]
-
-
-
 ## Requirement Software
 ### npm 
 
