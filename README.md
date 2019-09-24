@@ -230,7 +230,7 @@ Icon **logo** pada header dan favicon diambil dari folder public
 
 ## Edit Konten
 
-Edit konten terdapat di file **README.md**. Link hasil dari konten yang dimuat di tulisan ini dapat dilihat di [Tutorial Dokumentasi menggunakan Markdown](./dokumentasi-project/docs/README.md#format) 
+Edit konten terdapat di file **README.md**. Link hasil dari konten yang dimuat di tulisan ini dapat dilihat di [Tutorial Dokumentasi menggunakan Markdown](./dokumentasi-project/docs/README.md) 
 
 ### Setup markdown editor
 
@@ -270,7 +270,11 @@ Maka format teks tersebut akan mengikuti formatter syntax markdown secara otomat
 
 ### Editing markdown
 
-Sedangkan apabila akan melakukan editing terhadap file markdown yang sudah ada, pilih menubar **File > Open** <br>
+Secara umum, editor markdown digunakan membuat file baru, mengubah file yang sudah ada, serta biasanya melakukan export file ke format HTML atau PDF.
+
+![editing](./img/editing-1.gif) <br>
+
+Untuk melakukan editing terhadap file markdown yang sudah ada, pilih menubar **File > Open** <br>
 
 ![abricotine-editing](./img/abricotine-editing.png)
 
@@ -280,4 +284,33 @@ Pilih file README.md yang dibuat di awal project di dalam folder docs.
 
 ![abricotine-editing](./img/abricotine-editing-3.png)
 
- Lalu konten yang telah dibuat di atas akan terlihat
+Lalu konten yang telah dibuat di atas akan terlihat. 
+<br>
+
+#### Format heading level
+![editing](./img/editing-2.gif)
+<br>
+
+![editing](./img/editing-5.gif)
+<br>
+
+#### Insert gambar
+##### Embed  gambar dari URL
+![editing](./img/editing-3.gif) 
+<br>
+
+##### Embed gambar dari komputer
+![editing](./img/editing-image-local.gif)
+<br>
+
+#### Penggunaan sidebar
+##### Konten default tanpa sidebar
+![editing-defalult-sidebar](./img/editing-nonsidebar.gif)
+<br>
+
+##### Konten dengan sidebar
+![editing-withsidebar](./img/editing-withsidebar.gif)
+<br>
+
+
+Format syntax dasar markdown lebih lanjut dapat dilihat di link [format umum markdown](./dokumentasi-project/docs/README.md#format)
