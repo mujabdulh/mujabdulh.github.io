@@ -5,6 +5,41 @@ sidebar: auto
 # Dokumentasi Menggunakan Markdown 
 "Nearly all Markdown applications support the basic syntax outlined in John Gruber’s original design document. There are minor variations and discrepancies between Markdown processors — those are noted inline wherever possible." - markdownguide.org
 
+
+
+***LINK ke spesifik HEADER***
+>format header yaitu huruf non kapital semua, ganti spasi menggunakan tanda - 
+
+[cara kerja file markdown](./#cara-kerja-markdown)
+
+`[cara kerja file markdown](./#cara-kerja-markdown)`
+
+<br>
+
+***LINK ke FILE Lain***
+
+> secara default akan memanggil file **README.md** dalam folder **sub-bahasan-1**
+
+[sub bahasan 1](./sub-bahasan-1/) 
+
+`[link title](./sub-bahasan-1/)`
+
+
+> untuk link spesifik file-lain.md dalam folder tidak perlu menggunakan akhiran .md 
+
+[sub bahasan - file one](./sub-bahasan-1/one)
+
+
+<br>
+
+***LINK ke FILE Lain pada spesifik HEADER***
+
+[sub bahasan 2 - Bagian 2 : pengantar konten](./sub-bahasan-2/#bag-2-pengantar-konten)
+
+`[sub bahasan 2](./sub-bahasan-2/#bag-2-pengantar-konten)`
+
+
+
 ## Markdown 
 Markdown is the simple and easy-to-use markup language you can use to format virtually any document.
 

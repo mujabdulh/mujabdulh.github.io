@@ -228,6 +228,48 @@ Icon **logo** pada header dan favicon diambil dari folder public
 ![public-resource](./img/public-resource.png)
 <br>
 
+
+Sedangkan untuk konfigurasi menu bar, tambahkan key *nav* di bawah key *logo* pada objek ***themeConfig*** 
+
+```
+nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Guide', link: '/guide/' },
+      { text: 'External', link: 'https://google.com' },
+      { text: 'Group', items: [
+        { text: 'Home', link: '/' },
+        { text: 'Guide', link: '/guide/' },
+      ] }
+     ]
+```
+
+
+
+<br>
+sehingga file config.js keseluruhan akan terlihat seperti berikut:
+
+```
+module.exports = {
+  title: 'Title Static Web',
+  description: 'Deksripsi Static Web',
+  themeConfig: {
+    docsDir: 'docs',
+    logo: '/sampleicon.png',
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Guide', link: '/guide/' },
+      { text: 'External', link: 'https://google.com' },
+      { text: 'Group', items: [
+        { text: 'Home', link: '/' },
+        { text: 'Guide', link: '/guide/' },
+      ] }
+     ]
+  }
+}
+```
+
+<br>
+
 ## Edit Konten
 
 Edit konten terdapat di file **README.md**. Link hasil dari konten yang dimuat di tulisan ini dapat dilihat di [Tutorial Dokumentasi menggunakan Markdown](./dokumentasi-project/docs/README.md) 
