@@ -100,7 +100,7 @@ Tanggapan:
 
 Di halaman **Profil Saya** > tap **Ubah Profil**. Lanjutkan tap menu **Ubah Password** di paling bawah. Untuk lebih detailnya, ikuti langkah-langkah berikut:
 
-[https://drive.google.com/file/d/1fxYFdy0vzRamsSUg8yjmv6zXoGDDS0SI/view?usp=drive\_link](https://drive.google.com/file/d/1fxYFdy0vzRamsSUg8yjmv6zXoGDDS0SI/view?usp=drive_link)
+[![Ganti Password](https://res.cloudinary.com/marcomontalbano/image/upload/v1688960748/video_to_markdown/images/google-drive--1fxYFdy0vzRamsSUg8yjmv6zXoGDDS0SI-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1fxYFdy0vzRamsSUg8yjmv6zXoGDDS0SI/view?usp=drive_link "Ganti Password")
 
   
 
