@@ -1,358 +1,303 @@
-# Tutorial Dokumentasi menggunakan Vuepress 
-Tulisan ini berisi langkah-langkah menggunakan vuepress untuk keperluan konten static web seperti dokumentasi, petunjuk teknis, FAQ, dan seterusnya. 
+# FAQ - civitas flutter
 
-Secara garis besar tutorial ini terdiri dari kebutuhan software apa saja supaya sistem dapat menjalankan vuepress, kemudian konfigurasi project vuepress, serta terakhir berupa pengisian konten project tersebut.
+Berikut rekap kumpulan pertanyaan maupun temuan yang dialami user melalui komentar di Play Store android selama menggunakan civitas flutter periode Januari s.d. Juni 2023.
 
-## Requirement Software
-### npm 
-
-#### Download npm (melalui nodejs)
-
-NPM sendiri didistribusikan melalui software node yang artinya saat node.js diinstall, otomatis npm ikut terinstall. Pada saat tutorial ini dibuat, digunakan **node versi 10.16.3.** yang bisa didapatkan langsung dari [website nodejs](https://nodejs.org/en/).
-
-![node-download](./img/node-download.png)
-
-Klik download button versi yang terdapat tulisan ***LTS***
-<br>
-
-#### Install nodejs
-
-Lakukan instalasi nodejs pada sistem dengan langkah-langkah seperti software lain pada umumnya
-
-![nodejs-installer](./img/nodejs-installer.png)
-
-Pada screenshoot tutorial ini diurutkan langkah instalasi dari kiri ke kanan. **Checked** pada opsi **checkbox License Agreement**
-
-![nodejs-installing](./img/nodejs-installing-1.png)
-
-Biarkan secara **default** pada window pilih direktori instalasi, serta pada windows fitur-fitur yang akan diinstall
-
-![nodejs-installing](./img/nodejs-installing-2.png)
-
-Konfirmasi install nodejs dengan pilih button ***Yes***
-
-![nodejs-installing](./img/nodejs-installing-3.png)
-
-Tunggu proses instalasi hingga selesai, diakhiri klik button ***Finish***
-
-![nodejs-installing](./img/nodejs-installing-4.png)
-<br>
-
-#### Verifikasi npm & node
-
-![cmd-npm](./img/cmd-npm.gif)
-
-Untuk memastikan terinstall, lakukan verifikasi melalui commandpromt / cmd. Klik start windows, ketik cmd lalu arahkan mouse dan klik kiri. 
-
-<img src="./img/cmd-start.png" alt="cmd-start" style="zoom:75%;" />
-
-Setelah muncul Comand Prompt, **masukan baris kode** berikut satu per satu dilanjutkan menekan **keyboard Enter** <br>
-cek versi npm : 
-
-`npm -v` 
-
-cek versi nodejs: 
-
-`node -v` 
-
-<img src="./img/cmd-npm-version.png" alt="npm-check" style="zoom:75%;" />
-
-Ditampilkannya versi node sesuai installer di awal menandakan instalasi berhasil dilakukan di sistem
-
-### vuepress 
-
-Vuepress biasa digunakan sebagai static site generator yang dioptimalkan untuk pembuatan dokumentasi teknis. Instalasi vuepress akan dibahas pada bagian selanjutnya yaitu setup project
-<br>
-
-## Setup Project Lokal
-
-### Instalasi vuepress
-
-Vuepress diinstall melalui paket npm, sehingga project di-inisiasi melalui npm<br>
-![cmd-project-new](./img/cmd-project-new.gif)
-
-- Tentukan **direktori project**. Default lokasi awal biasanya terletak di C:\Users\nama_user\  <br>
-  Untuk membuat folder yang dijadikan sebagai lokasi project, ketikan command: `mkdir nama_project` <br>
-  Lalu arahkan command line aktif ke direktori project tsb. `cd nama_project`  
-
-  ![cmd-directory](./img/cmd-directory.png)
-
-<br>
-
-- Buat **konfigurasi awal** project dengan command: `npm init `. Nantinya npm akan melakukan generate 1 file, yaitu package.json dan 1 folder node_modules. Untuk keperluan vuepress, file **package.json** ini nantinya akan diubah.  <br>
-
-  ![npm-init](./img/npm-init-1.png)
-
-  Tekan tombol keyboard Enter di setiap input command untuk membiarkan konfigurasi secara default, dan ketik ***yes*** untuk konfirmasi.
-
-  ![npm-init](./img/npm-init-2.png)
-
-- Dilanjutkan **install vuepress** sebagai dependensi local  berdasarkan dokumentasi dari [vuepress](https://vuepress.vuejs.org/guide/getting-started.html#inside-an-existing-project) <br>
-  Di direktori project, ketik command: `npm install -D vuepress` 
-
-  ![vuepress-install](./img/vuepress-install.png)
-
-  Tunggu proses instalasi vuepress hingga selesai--di tahap ini proses berlangsung lebih lama. Jika berhasil maka muncul teks seperti gambar berikut
-
-  ![vuepress-installed](./img/vuepress-installed.png)
-
-
-
-### File README
-
-File README.md akan diisi konten dokumentasi, petunjuk teknis, FAQ. 
-
-![cmd-project-readme](./img/cmd-project-readme.gif)
-
-Melalui command line, create file baru **README.md** di dalam direktori docs. Berikut langkah-langkah inisiasi project <br>
-
-Di direktori project, buat folder docs menggunakan command: `mkdir docs` <br>
-
-Create file README.md sebagai permulaan konten project, dengan command:  `echo '# Hello VuePress' > docs/README.md`.<br>
-
-Maka file README.md yang berisi '# Hello VuePress' akan tergenerate otomatis <br>
-![setup-readme](./img/setup-readme.png)  
-
-### File package.json
-
-File package.json berfungsi sebagai konfigurasi identitas project, termasuk setting script yang dieksekusi pada saat running project
-
-![edit-package-json](./img/edit-package-json.gif)
-
-- Masih di direktori project, ubah script pada file **package.json** menggunakan text editor
-  ![package-json](./img/package-json-default.png)
-
-  Ubah key **script** menjadi berikut:
-```
-{
-  "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
-  }
-}
-```
-
-![package-json](./img/package-json-edit.png)
-
-Setelah ditambahkan script vuepress untuk mode development & mode build, simpan perubahan file package.json tersebut 
-
-<br>
-
-### Preview static web
-
-Setelah script disesuaikan, running project untuk melihat hasil konten menggunakan browser
-
-![cmd-run-dev](./img/cmd-run-dev.gif)
-
-- Untuk preview kontennya pada mode development, ketik command `npm run docs:dev` 
-  ![vuepress-dev](./img/vuepress-dev.png)
-
-  Buka URL [localhost](http://localhost:8080/) default tersebut di browser <br>
-
-  Secara default favicon dan logo tidak akan seperti gambar berikut. Di sini telah berubah akibat konfigurasi lebih lanjut yang akan dibahas di bagian [Konfigurasi Project](#konfigurasi-project) <br>
-  Konten yang ditampilkan merupakan hasil preview dari file README.md <br>
-  ![vuepress-dev](./img/vuepress-dev-localhost.png)
   
-- Untuk menghentikan runtime, lakukan terminate mode development tersebut dengan menekan keyboard **Ctrl+C** sebanyak 1 sampai 2 kali, lalu ketik Y. <br>
-![vuepress-dev-terminate](./img/vuepress-dev-terminate.png)
 
-Selama pembuatan konten vuepress preview akan ditampilkan secara realtime, sedangkan untuk perubahan heading level dan konfigurasi, runtime perlu di terminate lalu running ulang dengan command 
+Untuk referensi, terlampir spreadsheet hasil export dari dashboard Playstore:
 
- `npm run docs:dev`  <br>
+[review-rating playstore.xlsx](https://t25639638.p.clickup-attachments.com/t25639638/00704600-6a1d-4681-97c2-ae9d2da7cc86/review-rating%20playstore.xlsx)
 
-![cmd-npm-terminate](./img/cmd-npm-terminate.gif)
+  
 
-<br>
-### Konfigurasi Project
+## Login
 
-#### Struktur Folder 
+### Gagal Login
 
-![vue-structure](./img/vue-structure.png)
+  
 
-Pada vuepress struktur folder yang dimilikinya fleksibel. Pada pproject ini, akan berfokus pada folder yang ditandai sesuai gambar 
+#### Loading blank terus-menerus
 
-1. Folder **public**
+Indikasi:
 
-   menyimpan sumber logo static web, dan favicon 
+Screen tidak masuk ke menu utama aplikasi
 
-2. File **config.js**
+[https://drive.google.com/file/d/1f4X-YtsJK9iUtbDvueVvtuF6ZFC8oAU0/view?usp=drive\_link](https://drive.google.com/file/d/1f4X-YtsJK9iUtbDvueVvtuF6ZFC8oAU0/view?usp=drive_link)
 
-   Mengatur title, logo, deskripsi, dan seterusnya sesuai ketentuan [vuepress basic-config](https://vuepress.vuejs.org/guide/basic-config.html#config-file) 
+  
 
+Tanggapan:
 
-Berikut cara membuat struktur project mengacu dari [vuepress](https://vuepress.vuejs.org/guide/directory-structure.html)
+Close aplikasi civitas dari recent screen, lalu buka kembali
 
-![cmd-vuepress-structure](./img/cmd-vuepress-structure.gif)
+  
 
-Buat struktur Folder tersebut. Dari direktori project aktif, arahkan ke dalam folder docs: 
-`cd docs`
+  
 
-buat folder .vuepress: 
-`mkdir .vuepress`
+#### Tidak bisa login, padahal tidak pernah ganti pasword
 
-buat folder public di dalam folder .vuepress:
-`mkdir .\.vuepress\public`
+Tanggapan:
 
-![project-structure](./img/project-structure.png)
+Perlu hubungi operator kampus
 
-buat file config.js (berupa script kosong) di dalam folder .vuepress:
-`echo '' > .\.vuepress\config.js`
+  
 
-![config-js](./img/config-js.png)
+#### Tidak bisa login, tampil notif data salah
 
+Indikasi notif berupa:
 
+Maaf data yang anda masukkan salah
 
-#### Edit konfigurasi web
+![](https://t25639638.p.clickup-attachments.com/t25639638/30d2dc11-a1f5-413e-ae55-0b066794aaa0/login-wrong_credential.png)
 
-Konfigurasi file [config.js vuepress](https://vuepress.vuejs.org/guide/basic-config.html#config-file) menjadi file esensial yang mengatur web vuepress yang dapat melakukan export javascript object seperti mengatur icon, title page, navigasi menu dan seterusnya. Hal ini akan terlihat saat running sebagai development server.
+![](https://t25639638.p.clickup-attachments.com/t25639638/09176e3d-9485-4aab-ae03-a3b1a495a51b/login-wrong_credential_loginortu.png)
 
-![vuepress-config-js](./img/vuepress-config-js.gif)
+Tanggapan:
 
-Caranya di folder .vuepress, edit script [konfigurasi](https://vuepress.vuejs.org/theme/default-theme-config.html) pada file **config.js**  seperti berikut 
+Terdapat kesalahan input Nim/Email/No.Hp ataupun Sandi. Lakukan reset password lewat button Lupa Sandi
 
-```
-module.exports = {
-  title: 'Title Static Web',
-  description: 'Deksripsi Static Web',
-  themeConfig: {
-    docsDir: 'docs',
-    logo: '/sampleicon.png'
-  }
-}
-```
+  
 
-![config-js](./img/config-js-edit.png)
+#### Tidak bisa login, tampil notif warning tunggu beberapa saat
 
-Icon **logo** pada header dan favicon diambil dari folder public
+Indikasi notif berupa:
 
-![public-resource](./img/public-resource.png)
-<br>
+Mohon tunggu beberapa saat, kami sedang meningkatkan service level dan kehandalan sistem
 
+... <need image> ...
 
-Sedangkan untuk konfigurasi menu bar, tambahkan key *nav* di bawah key *logo* pada objek ***themeConfig*** 
+Tanggapan:
 
-```
-nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/' },
-      { text: 'External', link: 'https://google.com' },
-      { text: 'Group', items: [
-        { text: 'Home', link: '/' },
-        { text: 'Guide', link: '/guide/' },
-      ] }
-     ]
-```
+Terdapat gangguan pada sistem, maka perlu hubungi operator kampus
 
+  
 
+### Tidak bisa akses menu
 
-<br>
-sehingga file config.js keseluruhan akan terlihat seperti berikut:
+#### Bisa login, tapi tidak bisa akses ke halaman menu utama
 
-```
-module.exports = {
-  title: 'Title Static Web',
-  description: 'Deksripsi Static Web',
-  themeConfig: {
-    docsDir: 'docs',
-    logo: '/sampleicon.png',
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/' },
-      { text: 'External', link: 'https://google.com' },
-      { text: 'Group', items: [
-        { text: 'Home', link: '/' },
-        { text: 'Guide', link: '/guide/' },
-      ] }
-     ]
-  }
-}
-```
+Indikasi notif berupa:
 
-<br>
+Mohon tunggu beberapa saat, kami sedang meningkatkan service level dan kehandalan sistem
 
-## Edit Konten
+![](https://t25639638.p.clickup-attachments.com/t25639638/1f06e036-b77e-4916-ba23-c36c68439f3e/login_cannot_home_2.png)
 
-Edit konten terdapat di file **README.md**. Link hasil dari konten yang dimuat di tulisan ini dapat dilihat di [Tutorial Dokumentasi menggunakan Markdown](./dokumentasi-project/docs/README.md) 
+Tanggapan:
 
-### Setup markdown editor
+Terdapat gangguan pada sistem, maka perlu hubungi operator kampus
 
-Sebelum mulai menyusun konten, pastikan terlebih dahulu markdown editor seperti [Haroopad](http://pad.haroopress.com/user.html), [Abricotine](https://github.com/brrd/Abricotine/releases), atau [Marktext](https://github.com/marktext/marktext/releases) terinstall di sistem. 
+  
 
-#### Install markdown editor
+  
 
-*Abricotine* yang digunakan pada tulisan ini bisa didapatkan dari link githubnya [berikut](https://github.com/brrd/Abricotine/releases/download/0.7.0/Abricotine-0.7.0-windows-x64.exe) <br>
+## Password
 
-![abricotine-install](./img/abricotine-installing.png)
+### Ganti password
 
-Untuk menginstall lakukan **klik kanan > Open** pada file installer tersebut. <br>
+#### Cara mengubah/mengganti password default
 
-![abricotine-installing-2](./img/abricotine-installing-2.png)
+Tanggapan:
 
-Setelah selesai otomatis muncul dialog konfirmasi untuk menjalankan Abticotine, pilih ***Run***
+Di halaman **Profil Saya** > tap **Ubah Profil**. Lanjutkan tap menu **Ubah Password** di paling bawah. Untuk lebih detailnya, ikuti langkah-langkah berikut:
 
+[https://drive.google.com/file/d/1fxYFdy0vzRamsSUg8yjmv6zXoGDDS0SI/view?usp=drive\_link](https://drive.google.com/file/d/1fxYFdy0vzRamsSUg8yjmv6zXoGDDS0SI/view?usp=drive_link)
 
+  
 
-#### Setting workspace editor
+#### Cara reset password
 
-Untuk mempermudah navigasi selama melakukan editing, sebaiknya atur sedikit tampilan workspace dari text editor, seperti tampilan navigasi / outline dari tulisan yg sedang dibuat. <br>
+Tanggapan:
 
-![abricotine-workspace](./img/abricotine-workspace.png)
+Di halaman login > tap **Lupa Sandi**. Lanjutkan input email (yang disimpan di profile biodata) dan tap button Atur Ulang Sandi
 
-Pilih menubar **View > Show Table of Contents**. Lakukan editing awal file markdown, contoh di gambar berikut menggunakan heading level 1 dan level 2, serta teks paragraf. <br>
+[https://drive.google.com/file/d/1XusmC7JtKwmywvJBZXA5A6ikTvUsyGWZ/view?usp=drive\_link](https://drive.google.com/file/d/1XusmC7JtKwmywvJBZXA5A6ikTvUsyGWZ/view?usp=drive_link)
 
-![abricotine-workspace](./img/abricotine-workspace-2.png)
+Periksa email masuk lalu lakukan reset password
 
-untuk melakukan format tulisan contohnya format bold, lakukan **sorotan pada teks untuk menyeleksi** dilanjutkan pilih menubar **Format > Bold**
+[https://drive.google.com/file/d/1si-KPzicX8SEitd1BFolGrPtaTuZ0mqo/view?usp=drive\_link](https://drive.google.com/file/d/1si-KPzicX8SEitd1BFolGrPtaTuZ0mqo/view?usp=drive_link)
 
-![abricotine-workspace](./img/abricotine-workspace-3.png)
+  
 
-Maka format teks tersebut akan mengikuti formatter syntax markdown secara otomatis melalui menu. Untuk syntax lebih lanjut dapat dilihat di [markdownguide.org](https://www.markdownguide.org/basic-syntax/)
+### Gagal reset password
 
-<br>
+#### Tidak bisa reset password, tampil notif tidak ditemukan
 
-### Editing markdown
+Indikasi notif berupa:
 
-Secara umum, editor markdown digunakan membuat file baru, mengubah file yang sudah ada, serta biasanya melakukan export file ke format HTML atau PDF.
+Email tidak ditemukan
 
-![editing](./img/editing-1.gif) <br>
+![](https://t25639638.p.clickup-attachments.com/t25639638/b6a96b54-45e5-4111-9088-9438bd8be241/reset_pass_email_error.png)
 
-Untuk melakukan editing terhadap file markdown yang sudah ada, pilih menubar **File > Open** <br>
+Tanggapan:
 
-![abricotine-editing](./img/abricotine-editing.png)
+Email yang digunakan untuk reset password tidak ditemukan di biodata mahasiswa. Hubungi operator kampus untuk memperbaharui email di biodata akun Anda.
 
-![abricotine-editing](./img/abricotine-editing-2.png)
+  
 
-Pilih file README.md yang dibuat di awal project di dalam folder docs.
+#### Tidak bisa reset password, tampil notif warning
 
-![abricotine-editing](./img/abricotine-editing-3.png)
+Indikasi notif berupa:
 
-Lalu konten yang telah dibuat di atas akan terlihat. 
-<br>
+Mohon tunggu beberapa saat, kami sedang meningkatkan service level dan kehandalan sistem
 
-#### Format heading level
-![editing](./img/editing-2.gif)
-<br>
+![](https://t25639638.p.clickup-attachments.com/t25639638/74389ccb-206f-4b9a-86d1-93e7751d76f7/lupa_sandi-error.jpg)
 
-![editing](./img/editing-5.gif)
-<br>
+Tanggapan:
 
-#### Insert gambar
-##### Embed  gambar dari URL
-![editing](./img/editing-3.gif) 
-<br>
+Terdapat gangguan pada sistem, maka perlu hubungi operator kampus
 
-##### Embed gambar dari komputer
-![editing](./img/editing-image-local.gif)
-<br>
+  
 
-#### Penggunaan sidebar
-##### Konten default tanpa sidebar
-![editing-defalult-sidebar](./img/editing-nonsidebar.gif)
-<br>
+  
 
-##### Konten dengan sidebar
-![editing-withsidebar](./img/editing-withsidebar.gif)
-<br>
+## Update civitas
 
+#### Tidak bisa mengakses menu setelah update di playstore
 
-Format syntax dasar markdown lebih lanjut dapat dilihat di link [format umum markdown](./dokumentasi-project/docs/README.md#format)
+Indikasi:
+
+Screen tidak masuk ke menu utama aplikasi
+
+[https://drive.google.com/file/d/1f4X-YtsJK9iUtbDvueVvtuF6ZFC8oAU0/view?usp=drive\_link](https://drive.google.com/file/d/1f4X-YtsJK9iUtbDvueVvtuF6ZFC8oAU0/view?usp=drive_link)
+
+  
+
+Tanggapan:
+
+Close aplikasi civitas dari recent screen, lalu buka kembali
+
+  
+
+  
+
+#### Loading blank icon civitas terus menerus setelah update di playstore
+
+Indikasi:
+
+Screen tidak masuk ke menu utama aplikasi
+
+[https://drive.google.com/file/d/1f4X-YtsJK9iUtbDvueVvtuF6ZFC8oAU0/view?usp=drive\_link](https://drive.google.com/file/d/1f4X-YtsJK9iUtbDvueVvtuF6ZFC8oAU0/view?usp=drive_link)
+
+Tanggapan:
+
+Close aplikasi civitas dari recent screen, lalu buka kembali
+
+  
+
+  
+
+## Download File
+
+### Akses Permission
+
+#### Tampil notif izin akses ketika download file
+
+Indikasi notif berupa:
+
+Permohonan izin akses ke penyimpanan
+
+![](https://t25639638.p.clickup-attachments.com/t25639638/0d736f2a-4c18-4946-b2c5-733048975832/download_permission_allowance_v2.png)
+
+Tanggapan:
+
+Notif Permohonan izin akan tampil di smartphone tertentu.
+
+Supaya bisa download, berikan izin sehingga semua permission Allowed. Ikuti langkah-langkah berikut
+
+[https://drive.google.com/file/d/13IHf8\_cpHYO1yABbuiNK2D3\_xHEYDTUi/view?usp=drive\_link](https://drive.google.com/file/d/13IHf8_cpHYO1yABbuiNK2D3_xHEYDTUi/view?usp=drive_link)
+
+Setelah itu, lakukan download dan buka file seperti biasa
+
+[https://drive.google.com/file/d/18MtNu2Wll6CU79DEP030J-0UbTvgmii7/view?usp=drive\_link](https://drive.google.com/file/d/18MtNu2Wll6CU79DEP030J-0UbTvgmii7/view?usp=drive_link)
+
+  
+
+### Gagal download file
+
+#### Tidak berhasil download bahan tugas
+
+Indikasi notif berupa:
+
+Mohon cek koneksi internet anda
+
+![](https://t25639638.p.clickup-attachments.com/t25639638/726d883b-c56d-4848-99de-14362e737cf0/download_koneksi_offline.png)
+
+Tanggapan:
+
+Koneksi perangkat terdeteksi sedang offline, maka perangkat perlu terhubung ke internet online.
+
+  
+
+Indikasi notif berupa:
+
+Download file gagal. Terdapat kesalahan pada file
+
+![](https://t25639638.p.clickup-attachments.com/t25639638/811229df-b483-449e-9b20-42c6299e5a7d/download_gagal_server.png)
+
+Tanggapan:
+
+Terjadi kesalahan pada file tersebut, maka perlu hubungi operator kampus
+
+  
+
+#### Loading terus-menerus ketika download
+
+Indikasi notif berupa:
+
+Sedang memuat, mohon tunggu
+
+![](https://t25639638.p.clickup-attachments.com/t25639638/5241df79-ced7-428c-b480-de16a58927c2/download_koneksi_not_stable.png)
+
+Tanggapan:
+
+Koneksi internet perangkat tidak stabil, maka perlu ganti jaringan yang terhubung. Direkomendasikan melakukan update dari store sesuai platform smartphone ([Play Store](https://play.google.com/store/apps/details?id=suteki.co.id) untuk android, [App Store](https://apps.apple.com/id/app/civitas/id1580888079) untuk iphone)
+
+  
+
+#### Tidak bisa lihat file SKPI
+
+Indikasi notif berupa:
+
+Terdapat kesalahan pada file
+
+![](https://t25639638.p.clickup-attachments.com/t25639638/167e1c88-63b5-4878-9bd6-1fd863472174/skpi_error_file.png)
+
+Tanggapan:
+
+Terjadi kesalahan pada file skpi yang dipilih tersebut, maka perlu hubungi operator kampus
+
+  
+
+### Lokasi download file di perangkat smartphone
+
+#### Di mana lokasi folder file hasil download disimpan
+
+File yang sudah di-download akan tersimpan di internal storage perangkat
+
+platform android:
+
+[https://drive.google.com/file/d/1LAIExxE-mxw2LhKUWqQM4uDhX0NGBrj2/view?usp=drive\_link](https://drive.google.com/file/d/1LAIExxE-mxw2LhKUWqQM4uDhX0NGBrj2/view?usp=drive_link)
+
+  
+
+platform ios:
+
+[https://drive.google.com/file/d/1MplC21sH45XmZVnRDZawCzyqFGdtudBG/view?usp=drive\_link](https://drive.google.com/file/d/1MplC21sH45XmZVnRDZawCzyqFGdtudBG/view?usp=drive_link)
+
+  
+
+### Nilai
+
+#### Nilai, Transkrip tidak tampil, ada tulisan lunasi tagihan
+
+Indikasi notif berupa:
+
+Tampil tulisan **lunasi tagihan**
+
+  
+
+Tanggapan:
+
+Direkomendasikan melakukan update dari store sesuai platform smartphone ([Play Store](https://play.google.com/store/apps/details?id=suteki.co.id) untuk android, [App Store](https://apps.apple.com/id/app/civitas/id1580888079) untuk iphone)
+
+Jika setelah update masih ada tulisan lunasi tagihan, maka Anda harus melunasi tagihan biaya kuliah. Untuk keterangan lebih lanjut, harap hubungi operator kampus
